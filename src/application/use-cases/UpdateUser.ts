@@ -1,5 +1,5 @@
 import { User } from "../../domain/entity/User";
-import { IUserRepository } from "../../domain/repository/IUserRepository";
+import type { IUserRepository } from "../../domain/repository/IUserRepository";
 import { UpdateUserDTO } from "../dtos/UpdateUserDTO";
 
 export class UpdateUser {
