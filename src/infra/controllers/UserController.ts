@@ -55,9 +55,10 @@ export class UserController {
     const repository = this.userRepository;
     const useCase = new UpdateUser(repository);
     const dto = new UpdateUserDTO(
+      String(userId),
       req.body.name,
       req.body.email,
-      req.body.password,
+      
     );
     const user = await useCase.execute(dto);
     res.json({ message: `Updating user with ID: ${userId}`, data: user });
@@ -68,6 +69,7 @@ export class UserController {
     const repository = this.userRepository;
     const useCase = new DeleteUser(repository);
     const user = await useCase.execute(String(userId));
-    res.json({ message: `Deleting user with ID: ${userId}` });
+
+    res.json({ message: `Deleting user with ID: ${userId}`, data: user });
   }
 }

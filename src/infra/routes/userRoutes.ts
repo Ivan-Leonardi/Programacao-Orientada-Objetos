@@ -1,29 +1,30 @@
 import { Router } from "express";
+import { UserController } from "../controllers/UserController";
 
 export function createUserRoutes(): Router {
   const router = Router();
 
+  const userController = new UserController();
+
   router.get("/", (req, res) => {
-    res.json({ message: "Fetching all users" });
+    userController.getAllUsers(req, res);
   });
 
   router.get("/:id", (req, res) => {
     const userId = req.params.id;
-    res.json({ message: `Fetching user with ID: ${userId}` });
+    userController.getUserById(req, res);
   });
 
   router.post("/", (req, res) => {
-    res.json({ message: "Creating a new user" });
+    userController.createUser(req, res);
   });
 
   router.put("/:id", (req, res) => {
-    const userId = req.params.id;
-    res.json({ message: `Updating user with ID: ${userId}` });
+    userController.updateUser(req, res);
   });
 
   router.delete("/:id", (req, res) => {
-    const userId = req.params.id;
-    res.json({ message: `Deleting user with ID: ${userId}` });
+    userController.deleteUser(req, res);
   });
 
   return router;
