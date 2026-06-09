@@ -71,8 +71,8 @@ O contrato `IUserRepository` permite substituir a implementação em memória po
 ### Instalação
 
 ```bash
-git clone https://github.com/Ivan-Leonardi/Programa-o-Orientada-a-Objetos.git
-cd Programacao-Orientada-a-Objetos
+git clone https://github.com/Ivan-Leonardi/concepts-poo.git
+cd concepts-poo
 npm install
 ```
 
